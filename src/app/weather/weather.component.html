@@ -1,0 +1,51 @@
+<div class="backgroundin"
+  [ngClass]="{rainynight: this.weatherData?.current.condition.text == 'Partly cloudy' && this.weatherData?.current.is_day == 0, clearnight: this.weatherData?.current.temp_c > 19 && this.weatherData?.current.temp_c <= 50 && this.weatherData?.current.is_day == 0, cloudynight: this.weatherData?.current.temp_c > 50 && this.weatherData?.current.is_day == 0, 
+  rainy: this.weatherData?.current.temp_c >= 0 && this.weatherData?.current.temp_c <=19 && this.weatherData?.current.is_day == 1, sunny: this.weatherData?.current.temp_c > 19 && this.weatherData?.current.temp_c <= 50 && this.weatherData?.current.is_day == 1, cloudy: this.weatherData?.current.temp_c > 50 && this.weatherData?.current.is_day == 1}">
+  <div class="split left">
+    <div class="location">
+      <mat-grid-list cols="3" rowHeight="50px">
+        <mat-grid-tile rowspan="2" style=" font-size: 35px; ">{{this.weatherData?.current.temp_c}}°C</mat-grid-tile>
+        <mat-grid-tile style="font-size: 30px;">{{this.weatherData?.location.name}}</mat-grid-tile>
+        <mat-grid-tile><img style="height: 50px;" src="{{ this.weatherData?.current.condition.icon}}"></mat-grid-tile>
+        <mat-grid-tile style="font-size: 20px;">{{this.weatherData?.location.localtime}}</mat-grid-tile>
+        <mat-grid-tile style="font-size: 20px;">{{ this.weatherData?.current.condition.text}}</mat-grid-tile>
+      </mat-grid-list>
+    </div>
+
+  </div>
+  <div class="split right">
+    <div class="centered">
+      <div class="searchlocation">
+        <form class="form-inline" [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
+          <input
+            style="height: 35px;width:500px; border-width: 0 0 1px 0; background-color:transparent; border-color:white; margin-bottom:25px; color:aliceblue; font-size:30px; outline: none;"
+            type="search" id="" placeholder="Location" aria-label="Search" [(ngModel)]="locations"
+            formControlName="location">
+          <button style="background-color: transparent; border-width:0" class="btn" type="submit"><img
+              style="height: 45px; width:45px" src="assets/searchloc.png" /></button>
+
+          <div class="scroll-me" id="scrollbar6">
+            <ul style="color:white; font-size: 30px;" *ngFor="let place of places" (click)="onHistoryLocationClicked(place.locations)">
+              {{place.locations}}
+            </ul>
+          </div>
+        </form>
+      </div>
+      <div class="details">
+        <h1 style="color: white;">Weather Details</h1>
+        <mat-grid-list style="margin-left:-25%" cols="2" rowHeight="50px">
+          <mat-grid-tile style="color: rgba(237, 244, 244, 0.736);">Cloudy</mat-grid-tile>
+          <mat-grid-tile style="color: white;"><b>{{ this.weatherData?.current.cloud }}%</b></mat-grid-tile>
+          <mat-grid-tile style="color: rgba(237, 244, 244, 0.736);">Humidity</mat-grid-tile>
+          <mat-grid-tile style="color: white;"><b>{{ this.weatherData?.current.humidity}}%</b></mat-grid-tile>
+          <mat-grid-tile style="color: rgba(237, 244, 244, 0.736);">Wind Speed</mat-grid-tile>
+          <mat-grid-tile style="color: white;"><b>{{ this.weatherData?.current.wind_kph}}km/h</b></mat-grid-tile>
+          <mat-grid-tile style="color: rgba(237, 244, 244, 0.736);">Precipitation</mat-grid-tile>
+          <mat-grid-tile style="color: white;"><b>{{ this.weatherData?.current.precip_mm}}%</b></mat-grid-tile>
+          <mat-grid-tile style="color: rgba(237, 244, 244, 0.736);">Feels Like</mat-grid-tile>
+          <mat-grid-tile style="color: white;"><b>{{ this.weatherData?.current.feelslike_c}}°C</b></mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+  </div>
+</div>

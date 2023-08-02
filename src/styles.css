@@ -1,0 +1,129 @@
+body, html {
+  height: 100%;
+  margin:0px
+}
+.backgroundin{
+  background-image: url("assets/backgroundin.jpg");
+  margin:0px;
+  height:100%;
+  width:100%;
+  -webkit-background-size:cover;
+  -o-background-size:cover;
+  -moz-background-size:cover;
+  background-size:cover;
+}
+
+.split {
+  top: 0;
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+  
+  
+.right {
+  right: 0;
+  background-color: rgba(57, 56, 56, 0.571);
+}
+  
+.centered {
+  position: absolute;
+  left: 20%;
+}
+
+.location{
+  margin-top: 55%;
+  color: aliceblue;
+}
+  
+::placeholder {
+  color: #cccacac4;
+  opacity: 1;
+}
+
+.searchlocation{
+  min-height: 350px;
+}
+
+.details{
+  position: fixed;
+  scroll-margin-bottom: 10%;
+}
+
+/*Backgroud for various variables*/
+.rainy{
+  background-image: url("assets/background1.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+
+.sunny{
+  background-image: url("assets/sunny.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+.cloudy{
+  background-image: url("assets/cloudy.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+
+.rainynight{
+  background-image: url("assets/rainynight.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+
+.clearnight{
+  background-image: url("assets/clearnight.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+.cloudynight{
+  background-image: url("assets/cloudynight.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+
+/*Scroll design*/
+.scroll-me {
+  max-height: 250px;
+  overflow-y: scroll;
+}
+
+#scrollbar6::-webkit-scrollbar {
+  width: 12px;
+}
+
+#scrollbar6::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #95a5a6;
+  border: 1px solid #cacaca;
+}
+
+#scrollbar6::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #2c3e50;
+}
+
