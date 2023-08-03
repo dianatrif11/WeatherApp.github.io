@@ -48,7 +48,9 @@ export class WeatherComponent implements OnInit {
   }
 
   onHistoryLocationClicked(location:string){
-    console.log(location);
-  }
-
+    this.apixuService.getWeather(location).subscribe(data => {
+      this.weatherData = data;
+      console.log(this.weatherData);
+    });
+}
 }

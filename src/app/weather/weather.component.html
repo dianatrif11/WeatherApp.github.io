@@ -1,6 +1,6 @@
 <div class="backgroundin"
-  [ngClass]="{rainynight: this.weatherData?.current.condition.text == 'Partly cloudy' && this.weatherData?.current.is_day == 0, clearnight: this.weatherData?.current.temp_c > 19 && this.weatherData?.current.temp_c <= 50 && this.weatherData?.current.is_day == 0, cloudynight: this.weatherData?.current.temp_c > 50 && this.weatherData?.current.is_day == 0, 
-  rainy: this.weatherData?.current.temp_c >= 0 && this.weatherData?.current.temp_c <=19 && this.weatherData?.current.is_day == 1, sunny: this.weatherData?.current.temp_c > 19 && this.weatherData?.current.temp_c <= 50 && this.weatherData?.current.is_day == 1, cloudy: this.weatherData?.current.temp_c > 50 && this.weatherData?.current.is_day == 1}">
+  [ngClass]="{rainynight: this.weatherData?.current.condition.text == 'Light rain shower' && this.weatherData?.current.is_day == 0, clearnight: this.weatherData?.current.condition.text == 'Clear' && this.weatherData?.current.is_day == 0, cloudynight: this.weatherData?.current.condition.text == 'Partly cloudy' && this.weatherData?.current.is_day == 0, 
+  rainy: this.weatherData?.current.condition.text == 'Light rain shower' && this.weatherData?.current.is_day == 1, sunny: this.weatherData?.current.condition.text == 'Clear' && this.weatherData?.current.is_day == 1, cloudy: this.weatherData?.current.condition.text == 'Partly cloudy' && this.weatherData?.current.is_day == 1}">
   <div class="split left">
     <div class="location">
       <mat-grid-list cols="3" rowHeight="50px">
