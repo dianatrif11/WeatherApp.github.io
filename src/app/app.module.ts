@@ -12,11 +12,25 @@ import { allAppRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { ApixuService } from './apixu.service';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { LoginComponent } from './login/login.component';
+import { AutentificationComponent } from './autentification/autentification.component';
+const firebaseConfig = {
+  apiKey: "AIzaSyAmPnMPhv_EH1Us130_dKH_Y2hVMCulQpk",
+  authDomain: "weatherapp-e16eb.firebaseapp.com",
+  projectId: "weatherapp-e16eb",
+  storageBucket: "weatherapp-e16eb.appspot.com",
+  messagingSenderId: "303493934657",
+  appId: "1:303493934657:web:f5f702ba02180e666be0c0"
+};
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
+    LoginComponent,
+    AutentificationComponent,
 
   ],
   imports: [
@@ -30,6 +44,8 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     ReactiveFormsModule,   
     HttpClientModule, 
     ScrollingModule,
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideFirestore(() => getFirestore()),
 
   ],
   providers: [ApixuService],
