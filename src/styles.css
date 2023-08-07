@@ -62,6 +62,16 @@ body, html {
   min-height: 100%;
 }
 
+.container{
+  align-items: center;
+  position: fixed;
+  margin-top: 10%;
+  margin-left: 30%;
+  margin-right: 25%;
+  width: 450px;
+  background-color: rgba(101, 99, 99, 0.551);
+}
+
 .background-autentification{
   background-image: url("assets/background2.jpg");
   height: 100%;

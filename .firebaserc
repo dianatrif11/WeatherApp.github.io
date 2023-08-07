@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "weatherapp-e16eb"
+  },
+  "targets": {
+    "weatherapp-e16eb": {
+      "hosting": {
+        "weather": [
+          "weatherapp-e16eb"
+        ]
+      }
+    }
+  }
+}

@@ -1,7 +1,17 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { WeatherComponent } from './weather/weather.component';
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { LoginComponent } from './login/login.component';
-import { AutentificationComponent } from './autentification/autentification.component';
+import { RegisterComponent } from './register/register.component';
 
-export const allAppRoutes: Routes = [{ path: '', component: AutentificationComponent }];
+export const allAppRoutes: Routes = [
+    { path: 'weather', component: WeatherComponent },
+    {path: 'register', component: RegisterComponent},
+    { path: '', component: LoginComponent}
+];
+
+@NgModule({
+    imports: [RouterModule.forRoot(allAppRoutes)],
+    exports: [RouterModule]
+  })
+  export class AppRoutingModule { }

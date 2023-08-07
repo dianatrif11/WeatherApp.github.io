@@ -1,25 +1,23 @@
 <div class="background-login">
   <div class="container">
     <div class="login">
-      <h1 style="color: #6c554f;">LogIn</h1>
+      <h1 style="color: #d4b7a4">LogIn</h1>
       <br>
       <div class="form-group">
-        <label for="InputEmail">Adresa de email</label>
+        <label for="InputEmail" style="color:#88A795
+        ">Adresa de email</label>
         <input style="width: 400px;" type="email" class="form-control" id="exampleInputEmail1"
-          aria-describedby="emailHelp" placeholder="Email">
+          aria-describedby="emailHelp" placeholder="Email" [(ngModel)]="email">
       </div>
       <div class="form-group">
-        <label for="InputPassword">password</label>
+        <label for="InputPassword" style="color:#88A795">Parola</label>
         <input style="width: 400px;" type="password" class="form-control" id="exampleInputPassword1"
-          placeholder="password">
+          placeholder="password" [(ngModel)]="password">
       </div>
-      <button type="submit" class="btn" style="color:#6c554f;font-size:larger;"><b>Creare cont</b></button>
-      <button type="submit" class="btn" routerLink="/forgotpassword"
-        style="color:#6c554f;font-size:larger; margin-left: 2.5cm;"><b>Schimbare
-          password</b></button>
+      <button type="submit" class="btn" style="color:#97785f;font-size:larger;" routerLink="/"><b>Creare cont</b></button>
       <br>
-      <br>
-      <button type="submit" class="btn btn-primary">LogIn</button>
+      <button type="submit" style="margin-left:300px; margin-bottom:30px; background-color:
+      #a7c4b2; border: 2px solid #a7c4b2;" class="btn btn-primary" (click)="login()">LogIn</button>
     </div>
   </div>
 </div>
